@@ -45,16 +45,16 @@ void List<T>::insert_after( int position, T value)
 template <typename T>
 void List<T>::Ssort()
 {
-    Node<T>* temp = first_node;
-    for (int i = 0; i < size - 1; i++)
+    Node<T>* temp ;
+    for (int i = 0; i < size ; i++)
     {
-        for (int j = 0; j < size - i - 1; j++)
+        for (int j = 0; j < size - i - 1 ; j++)
         {
             if ((*this)[j] -> get_data() > (*this)[j + 1]-> get_data())
             {
                 temp -> set_data((*this)[j]-> get_data());
                 (*this)[j]-> set_data((*this)[j + 1]-> get_data()) ;
-                (*this)[j + 1]-> set_data(temp-> get_data()) ;
+                (*this)[j+1]-> set_data(temp-> get_data()) ;
             }
         }
     }
@@ -115,8 +115,6 @@ Node<T>* Node<T>::insert( T value)
     return new_n;
 }
 
-
-
 template <typename T>
 void Node<T>::remove()
 {
@@ -172,17 +170,17 @@ int main()
 
 
     ////delete single node.Find node by index
-    printf("enter the index for the node to be removed\n");
+  //  printf("enter the index for the node to be removed\n");
     int index;
-    scanf("%d", &index);
-    int_list.remove( index);
-    int_list.print( 0);
-    std::cout << "Size: " << int_list.get_size() << "\n\n";
+  //  scanf("%d", &index);
+  //  int_list.remove( index);
+  //  int_list.print( 0);
+ //   std::cout << "Size: " << int_list.get_size() << "\n\n";
 
 
-
+    printf("Sort !\n");
     int_list.Ssort();
-    int_list.print( 0);
+    int_list.print( 1);
     std::cout << "Size: " << int_list.get_size() << "\n\n";
 
     List<std::string> string_list( "Cherez chas otsuda v chisty pereulok");
